@@ -1,0 +1,4 @@
+/**
+ * Sudoku package
+ */
+package sudoku;
