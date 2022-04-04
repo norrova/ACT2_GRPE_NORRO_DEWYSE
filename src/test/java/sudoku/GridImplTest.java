@@ -153,13 +153,13 @@ public class GridImplTest {
     public void testAllowedCharacterInNormalSize() {
         Assert.assertArrayEquals(
                 new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9' },
-                GrilleImpl.NormalSizeAllowedCharacter);
+                GrilleImpl.NORMAL_SIZE_ALLOWED_CHARACTER);
     }
 
     @Test
     public void testAllowedCharacterInLargeSize() {
         Assert.assertArrayEquals(
                 new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f' },
-                GrilleImpl.possible);
+                GrilleImpl.DEFAULT_CHARACTERS);
     }
 }

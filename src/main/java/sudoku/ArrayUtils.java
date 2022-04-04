@@ -1,10 +1,22 @@
 package sudoku;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
+/**
+ * Array utils class.
+ */
+public final class ArrayUtils {
 
-public class ArrayUtils {
-    public static char[] concat(char[]... arrays) {
+    /**
+     * Constructor.
+     */
+    private ArrayUtils() {
+    }
+
+    /**
+     * concatenation of several arrays.
+     * @param arrays
+     * @return arrays concatenated
+     */
+    public static char[] concat(final char[]... arrays) {
         int length = 0;
         for (char[] array : arrays) {
             length += array.length;
