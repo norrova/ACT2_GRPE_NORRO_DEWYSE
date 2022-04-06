@@ -40,11 +40,11 @@ public final class GrilleImpl implements Grille {
      * @throws IllegalArgumentException
      */
     public GrilleImpl(final char[][] data) throws IllegalArgumentException {
-        this.setDimension(data.length);
-
         this.allowedCharacters = ArrayUtils.concat(
                 this.getAllowedCharactersAccordingToDimension(data.length),
                 new char[] {GrilleImpl.EMPTY});
+
+        this.setDimension(data.length);
 
         if (!GridFormatValidator.isValidFormat(data, this.allowedCharacters)) {
             throw new IllegalArgumentException(
@@ -61,6 +61,7 @@ public final class GrilleImpl implements Grille {
      * Get grid of the sudoku game.
      * @return grid
      */
+    @Override
     public char[][] getGrid() {
         return grid;
     }
@@ -69,6 +70,7 @@ public final class GrilleImpl implements Grille {
      * Get allowed characters.
      * @return allowed characters
      */
+    @Override
     public char[] getAllowedCharacters() {
         return allowedCharacters;
     }
@@ -112,7 +114,16 @@ public final class GrilleImpl implements Grille {
         return this;
     }
 
-    private char[] getAllowedCharactersAccordingToDimension(final int size) {
+    /**
+     * Get allowed characters according to the dimension of the grid.
+     * @param size
+     * @return Size of grid
+     * @throws IllegalArgumentException When no allowed characters
+     * were found for a size
+     */
+    private char[] getAllowedCharactersAccordingToDimension(
+            final int size
+    ) throws IllegalArgumentException {
         if (size == GridSizeEnum.NORMAL_GRID_SIZE.getValue()) {
             return GrilleImpl.NORMAL_SIZE_ALLOWED_CHARACTER;
         }
@@ -121,7 +132,8 @@ public final class GrilleImpl implements Grille {
             return GrilleImpl.DEFAULT_CHARACTERS;
         }
 
-        throw new IllegalArgumentException("Size not supported");
+        throw new IllegalArgumentException(
+                "No allowed characters were found for this size");
     }
 
     @Override
@@ -130,6 +142,12 @@ public final class GrilleImpl implements Grille {
             final int y,
             final char value
     ) throws IllegalArgumentException {
+
+        if (value == Grille.EMPTY) {
+            this.grid[y][x] = value;
+            return;
+        }
+
         this.possible(x, y, value);
         if (!GridValidator.isValidValueAccordingToGrid(grid, x, y, value)) {
             throw new IllegalArgumentException(
@@ -186,7 +204,12 @@ public final class GrilleImpl implements Grille {
             );
         }
 
-        if (!MathUtils.isNumberBetween(y, 0, this.getDimension() - 1)) {
+        if (
+                !MathUtils.isNumberBetween(
+                        y,
+                        0,
+                        this.getDimension() - 1)
+        ) {
             throw new IllegalArgumentException(
                     "y must be in the range of 0 to "
                             + (this.getDimension() - 1)

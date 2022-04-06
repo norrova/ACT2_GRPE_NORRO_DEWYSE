@@ -41,6 +41,11 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>main.Sudoku.*</exclude>
+                            </excludes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -56,6 +61,7 @@
                     <version>3.1.2</version>
                     <configuration>
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                        <suppressionsLocation>config/checkstyle/checkstyle-suppressions.xml</suppressionsLocation>
                     </configuration>
                 </plugin>
 

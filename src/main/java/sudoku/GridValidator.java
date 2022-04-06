@@ -116,16 +116,14 @@ public final class GridValidator {
             final char value
     ) {
         int length = GridSubgridSizeProvider.provide(grid.length).getValue();
-        int indexX = x;
-        int indexY = y;
 
         // Get the start point of subgrid
-        int x0 = (int) (x / length) * length;
-        int y0 = (int) (y / length) * length;
-        for (int y1 = 0; y < length; indexY++) {
-            for (int x1 = 0; x < length; indexX++) {
+        int x0 = (int) x - x % length;
+        int y0 = (int) y - y % length;
+        for (int y1 = 0; y1 < length; y1++) {
+            int y3 = y0 + y1;
+            for (int x1 = 0; x1 < length; x1++) {
                 int x3 = x0 + x1;
-                int y3 = y0 + y1;
                 if (x3 != x && y3 != y && grid[y3][x3] == value) {
                     return true;
                 }
