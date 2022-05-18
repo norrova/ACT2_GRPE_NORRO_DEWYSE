@@ -58,8 +58,8 @@ public class GridSolver {
                 this.grid.setValue(x, y, value);
 
                 if (
-                        (x == this.grid.getDimension() - 1
-                        && y == this.grid.getDimension() - 1)
+                        x == this.grid.getDimension() - 1
+                        && y == this.grid.getDimension() - 1
                         || solve(x + 1, y)) {
                     return true;
                 }

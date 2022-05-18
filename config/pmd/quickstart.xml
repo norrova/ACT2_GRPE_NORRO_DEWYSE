@@ -20,7 +20,7 @@
     <rule ref="category/java/bestpractices.xml/ConstantsInInterface"/>
     <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitchStmt"/>
     <rule ref="category/java/bestpractices.xml/DoubleBraceInitialization"/>
-    <rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach"/>
+    <!--<rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach"/>-->
     <!-- <rule ref="category/java/bestpractices.xml/ForLoopVariableCount" /> -->
     <rule ref="category/java/bestpractices.xml/GuardLogStatement"/>
     <!-- <rule ref="category/java/bestpractices.xml/JUnit4SuitesShouldUseSuiteAnnotation" /> -->
@@ -155,7 +155,7 @@
     <!-- <rule ref="category/java/design.xml/SignatureDeclareThrowsException" /> -->
     <rule ref="category/java/design.xml/SimplifiedTernary"/>
     <!-- <rule ref="category/java/design.xml/SimplifyBooleanExpressions" /> -->
-    <rule ref="category/java/design.xml/SimplifyBooleanReturns"/>
+    <!--<rule ref="category/java/design.xml/SimplifyBooleanReturns"/>-->
     <rule ref="category/java/design.xml/SimplifyConditional"/>
     <rule ref="category/java/design.xml/SingularField"/>
     <!-- <rule ref="category/java/design.xml/SwitchDensity" /> -->
