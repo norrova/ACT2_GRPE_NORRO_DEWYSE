@@ -78,6 +78,7 @@
                         </dependency>
                     </dependencies>
                     <configuration>
+                        <excludeFilterFile>config/spotbugs/spotbugs-exclude.xml</excludeFilterFile>
                         <includeTests>true</includeTests>
                     </configuration>
                 </plugin>

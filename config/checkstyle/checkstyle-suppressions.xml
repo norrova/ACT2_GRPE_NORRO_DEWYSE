@@ -5,5 +5,6 @@
         "https://checkstyle.org/dtds/suppressions_1_2.dtd">
 
 <suppressions>
+    <suppress checks="FinalParametersCheck" files=".*\/main\/.*\.java"/>
     <suppress checks="MagicNumber" files=".*\/test\/.*\.java"/>
 </suppressions>

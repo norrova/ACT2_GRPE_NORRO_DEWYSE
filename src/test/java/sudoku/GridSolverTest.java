@@ -57,26 +57,4 @@ public class GridSolverTest {
                 this.grid.getGrid()
         );
     }
-
-    @Test
-    public void testGetterGrid() {
-        Assert.assertEquals(this.grid, this.solver.getGrid());
-    }
-
-    @Test
-    public void testSetterGrid() {
-        GrilleImpl exampleGrid = new GrilleImpl(new char[][]{
-                {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
-                {'4', '5', '6', '7', '8', '9', '1', '2', '3'},
-                {'7', '8', '9', '1', '2', '3', '4', '5', '6'},
-                {'9', '1', '2', '3', '4', '5', '6', '7', '8'},
-                {'3', '4', '5', '6', '7', '8', '9', '1', '2'},
-                {'6', '7', '8', '9', '1', '2', '3', '4', '5'},
-                {'8', '9', '1', '2', '3', '4', '5', '6', '7'},
-                {'2', '3', '4', '5', '6', '7', '8', '9', '1'},
-                {'5', '6', '7', '8', '9', '1', '2', '3', '4'}
-        });
-        this.solver.setGrid(exampleGrid);
-        Assert.assertEquals(exampleGrid, this.solver.getGrid());
-    }
 }

@@ -11,23 +11,7 @@ public class GridSolver {
      * Constructor.
      * @param paramGrid
      */
-    public GridSolver(final Grille paramGrid) {
-        this.grid = paramGrid;
-    }
-
-    /**
-     * Getter.
-     * @return grid
-     */
-    public Grille getGrid() {
-        return grid;
-    }
-
-    /**
-     * Setter grid.
-     * @param paramGrid
-     */
-    public void setGrid(final Grille paramGrid) {
+    public GridSolver(final GrilleImpl paramGrid) {
         this.grid = paramGrid;
     }
 

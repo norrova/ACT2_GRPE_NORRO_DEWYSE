@@ -28,6 +28,33 @@ public final class GrilleImpl implements Grille {
     private final char[][] grid;
 
     /**
+     * Caractere possible a mettre dans la grille.
+     *
+     * pour une grille 9x9 : 1..9
+     *
+     * pour une grille 16x16: 0..9-a..f
+     */
+    public static final char[] DEFAULT_CHARACTERS =
+            new char[]{
+                    '1',
+                    '2',
+                    '3',
+                    '4',
+                    '5',
+                    '6',
+                    '7',
+                    '8',
+                    '9',
+                    '0',
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e',
+                    'f'};
+
+
+    /**
      * Allowed characters in normal size grid 9X9.
      */
     public static final char[] NORMAL_SIZE_ALLOWED_CHARACTER = new char[] {
@@ -54,7 +81,7 @@ public final class GrilleImpl implements Grille {
             );
         }
 
-        this.grid = data;
+        this.grid = data.clone();
     }
 
     /**
@@ -63,7 +90,7 @@ public final class GrilleImpl implements Grille {
      */
     @Override
     public char[][] getGrid() {
-        return grid;
+        return grid.clone();
     }
 
     /**
@@ -72,7 +99,7 @@ public final class GrilleImpl implements Grille {
      */
     @Override
     public char[] getAllowedCharacters() {
-        return allowedCharacters;
+        return allowedCharacters.clone();
     }
 
     /**
